@@ -24,17 +24,18 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-0 rounded-md shadow-md w-full max-w-4xl h-[700px] flex overflow-hidden"> {/* Main container */}
-
+      <div className="bg-white p-0 rounded-md shadow-md w-full max-w-7xl h-screen flex overflow-hidden"> {/* Set height to fill the screen */}
+        
         {/* Form Section (left half) */}
         <div className="w-1/2 p-8 flex flex-col justify-center relative">
           {/* Logo in the top-left corner */}
           <div className="absolute top-4 left-4">
-            <img src="/logo.png" alt="Logo" className="h-25 w-25" /> {/* Smaller logo */}
+            <img src="/logo.png" alt="Logo" className="h-30 w-30" /> {/* Smaller logo */}
           </div>
 
           {/* Form fields start here */}
-          <h1 className="text-center text-2xl font-bold mb-6">Join as a healthcare provider today</h1>
+          <h1 className="text-center text-2xl font-bold ">BCA Healthcare </h1>
+          <h2 className="text-center text-2xl text-gray-600 mb-6">Sign Up to Connect with Our Medical Professionals </h2>
           {error && <p className="text-red-500 text-center mb-4">{error}</p>} {/* Error message display */}
           <form onSubmit={handleSignup} className="space-y-4">
             <div>
