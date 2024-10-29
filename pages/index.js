@@ -10,10 +10,8 @@ export default function Home() {
     setDropdownOpen(!dropdownOpen);
   };
 
-  // Function to generate a random rating between 1 and 5
-  const getRandomRating = () => (Math.random() * (5 - 1) + 1).toFixed(1); // Random rating with one decimal place
+  const getRandomRating = () => (Math.random() * (5 - 1) + 1).toFixed(1);
 
-  // Example data for services with random ratings
   const services = [
     { id: 1, title: "Eye Specialists and Consultation", price: "#25,000", image: "/Mental.png", rating: getRandomRating() },
     { id: 2, title: "Dental Care", price: "#30,000", image: "/Mental.png", rating: getRandomRating() },
@@ -27,7 +25,6 @@ export default function Home() {
     { id: 10, title: "Physical Therapy Care", price: "#19,000", image: "/Mental.png", rating: getRandomRating() },
   ];
 
-  // Function to render stars based on rating
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -44,23 +41,22 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-gray-100">
       {/* Navbar */}
       <header className="bg-white w-full py-4 px-6 shadow-md">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          {/* Left section: Logo and Search bar */}
+        <div className="flex flex-wrap items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-6">
             <div className="flex items-center">
-              <img src="/logo.png" alt="Logo" className="h-20 w-30 mr-4" />
+              <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
             </div>
-            <div className="relative">
+            <div className="relative w-full max-w-xs">
               <input
                 type="text"
                 placeholder="Search..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-80 focus:outline-none focus:ring focus:ring-blue-200"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:ring-blue-200"
               />
               <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
             </div>
           </div>
 
-          <nav className="flex items-center space-x-10">
+          <nav className="flex flex-wrap items-center space-x-4 md:space-x-10 mt-4 md:mt-0">
             <Link href="/healthcare-provider" className="text-gray-800 hover:underline">Healthcare Provider</Link>
             <Link href="/about" className="text-gray-800 hover:underline">About</Link>
             <div className="relative">
@@ -82,8 +78,8 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex justify-between items-start px-6 py-10 space-x-8 max-w-7xl mx-auto">
-        <div className="w-[20%] bg-white p-6 shadow-md rounded-md">
+      <main className="flex-1 flex flex-wrap md:flex-nowrap justify-between items-start px-6 py-10 space-y-8 md:space-x-8 max-w-7xl mx-auto">
+        <div className="w-full md:w-1/5 bg-white p-6 shadow-md rounded-md">
           <h2 className="text-xl font-semibold mb-4">Healthcare Services</h2>
           <ul className="space-y-2">
             {services.map(service => (
@@ -92,12 +88,16 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="w-[70%] bg-white p-6 shadow-md rounded-md flex">
-          <div className="flex flex-col justify-center w-2/3 text-left">
-            <span className="text-[#00BCD4] font-medium text-[48px] mb-2">Changing the ways you receive healthcare.</span>
-            <span className="text-[#5B5B5B] text-[24px] mb-4">Visit any health care center today, to know yours and stay healthy.</span>
+        <div className="w-full md:w-4/5 bg-white p-6 shadow-md rounded-md flex flex-col md:flex-row">
+          <div className="flex flex-col justify-center md:w-2/3 text-left">
+            <span className="text-[#00BCD4] font-medium text-2xl md:text-4xl lg:text-5xl mb-2">
+              Changing the ways you receive healthcare.
+            </span>
+            <span className="text-[#5B5B5B] text-lg md:text-xl lg:text-2xl mb-4">
+              Visit any healthcare center today, to know yours and stay healthy.
+            </span>
           </div>
-          <div className="w-1/3 flex items-center justify-end">
+          <div className="md:w-1/3 flex items-center justify-end">
             <img src="/landing.png" alt="Healthcare Illustration" className="w-full h-auto rounded-md" />
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
             </div>
           </div>
           {/* Right Column */}
-          <div className="name flex flex-col items-center mt-6 md:mt-0">
+          <div className="name flex flex-col  mt-6 md:mt-0">
             <span className="text-lg font-semibold">Support</span>
             <span className="block">Help Center</span>
             <span className="block">Contact</span>

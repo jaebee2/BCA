@@ -23,12 +23,12 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-0 rounded-md shadow-md w-full max-w-7xl h-screen flex overflow-hidden"> {/* Full screen height */}
+      {/* <div className="bg-white p-0 rounded-md shadow-md w-full max-w-7xl h-screen flex overflow-hidden"> Full screen height */}
 
         {/* Form Section (left half) */}
         <div className="w-1/2 p-8 flex flex-col justify-center relative">
           {/* Logo in the top-left corner */}
-          <div className="absolute top-4 left-4">
+          <div className=" top-4 left-4 lg:static lg:top-auto lg:left-auto flex justify-center w-full lg:w-auto">
             <img src="/logo.png" alt="Logo" className="h-30 w-30" /> {/* Smaller logo */}
           </div>
           
@@ -79,7 +79,7 @@ export default function Login() {
             className="object-cover w-full h-full" /> {/* Image filling the right half */}
         </div>
 
-      </div>
+      {/* </div> */}
     </div>
   );
 }
