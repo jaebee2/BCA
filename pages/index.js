@@ -1,7 +1,5 @@
-// pages/index.js
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-
 import { useState } from 'react';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 
@@ -13,9 +11,7 @@ export default function Home() {
   };
 
   // Function to generate a random rating between 1 and 5
-  const getRandomRating = () => {
-    return (Math.random() * (5 - 1) + 1).toFixed(1); // Random rating with one decimal place
-  };
+  const getRandomRating = () => (Math.random() * (5 - 1) + 1).toFixed(1); // Random rating with one decimal place
 
   // Example data for services with random ratings
   const services = [
@@ -139,9 +135,41 @@ export default function Home() {
           <img src="/image5.png" alt="Logo 5" className="h-16 w-auto object-contain mx-2" />
         </div>
       </section>
-      {/* enquiries section */}
-      <section className="px-6 py-10 flex justify-center">
-       
+
+      {/* Organizations Section (before footer) */}
+      <section className="container mx-auto p-6">
+        <div className="header flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          {/* Left Column */}
+          <div className="flex flex-col md:flex-row space-x-6">
+            <div className="text-section">
+              <span className="text-lg font-semibold">Organizations</span>
+              <span className="block">Consultancy</span>
+              <span className="block">Specialization</span>
+              <span className="block">Health Care Services</span>
+            </div>
+            <div className="text-section">
+              <span className="text-lg font-semibold">FAQ</span>
+              <span className="block">Reviews</span>
+              <span className="block">Referrals</span>
+              <span className="block">Partnership</span>
+            </div>
+            <div className="text-section">
+              <span className="text-lg font-semibold">Contact</span>
+              <span className="block">+234 808 3440 931</span>
+              <span className="block">info@bcahealth.com</span>
+              <span className="block">www.bcahealth.com</span>
+            </div>
+          </div>
+          {/* Right Column */}
+          <div className="name flex flex-col items-center mt-6 md:mt-0">
+            <span className="text-lg font-semibold">Support</span>
+            <span className="block">Help Center</span>
+            <span className="block">Contact</span>
+            <span className="text-center mt-4">
+              Every individual has a right to life and good health. Our goal is to ensure that you live a healthy life.
+            </span>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
