@@ -59,7 +59,7 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Search..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:ring-blue-200"
+                className="pl-10 pr-4 py-2 border border-gray-300  w-full focus:outline-none focus:ring focus:ring-blue-200"
               />
               <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
             </div>
@@ -73,8 +73,8 @@ export default function Home() {
           </div>
 
           {/* Navbar Links (Desktop Only) */}
-          <nav className="hidden md:flex items-center space-x-4">
-            <div className="relative flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x">
+            <div className="relative flex items-center space-x-5">
               <Link href="/healthcare-provider" className="text-gray-800 hover:underline">Healthcare Provider</Link>
               <Link href="/about" className="text-gray-800 hover:underline">About</Link>
 
@@ -85,7 +85,7 @@ export default function Home() {
                   <FiChevronDown className="ml-1" />
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-black">
+                  <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg  py-2 text-black">
                     <Link href="/login" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Login</Link>
                     <Link href="/signup" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Signup</Link>
                   </div>
@@ -94,20 +94,20 @@ export default function Home() {
             </div>
 
             {/* Login and Signup Buttons */}
-            <Link href="/login" className="px-4 py-2 bg-[#00BCD4] text-white rounded-md hover:bg-[#00796b]">Login</Link>
-            <Link href="/signup" className="px-4 py-2 text-black rounded-md ">Signup</Link>
+            <Link href="/login" className="px-4 py-2 bg-[#00BCD4] text-white  hover:bg-[#00796b]">Login</Link>
+            <Link href="/signup" className="px-4 py-2 text-black  ">Signup</Link>
           </nav>
         </div>
 
         {/* Dropdown Menu for Mobile */}
         {dropdownOpen && (
-          <div className="md:hidden flex flex-col space-y-2 mt-4 bg-white shadow-md p-4 rounded-md">
+          <div className="md:hidden flex flex-col space-y-2 mt-4 bg-white shadow-md p-4 ">
             {/* Search Bar for Mobile */}
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:ring-blue-200"
+                className="pl-10 pr-4 py-2 border border-gray-300  w-full focus:outline-none focus:ring focus:ring-blue-200"
               />
               <FiSearch className="absolute left-3 top-2.5 text-gray-500" />
             </div>
@@ -123,36 +123,40 @@ export default function Home() {
 
 
 
-
-
-      <main className="flex-1 flex flex-col md:flex-row justify-between items-start px-6 py-10 space-y-8 md:space-y-0 md:space-x-8 max-w-7xl mx-auto px-4 md:px-[20%]">
-        <div className="w-full md:w-1/3 lg:w-1/5 bg-white p-6 shadow-md rounded-md">
-          <h2 className="text-xl font-semibold mb-4">Healthcare Services</h2>
+      <main className="flex flex-col md:flex-row justify-center gap-[30px]  max-w-[1000px] mx-auto py-10 h-full">
+        {/* First Section: Sidebar with 20% Width */}
+        <div className=" max-md:hidden  w-full md:w-[20%] bg-white p-6 shadow-md h-[400px] overflow-auto ">
+          <div className="text-xl font-semibold mb-4 "></div>
           <ul className="space-y-2">
-            {services.map(service => (
+            {services.map((service) => (
               <li key={service.id} className="text-gray-800">{service.title}</li>
             ))}
           </ul>
         </div>
 
-        <div className="w-[80%] md:w-5/6 lg:w-full bg-white p-6 shadow-md rounded-md flex flex-col md:flex-row items-center md:items-start">
+        {/* Second Section: Main Content with 70% Width */}
+        <div className="w-full max-md:w-full md:w-[80%] relative bg-white p-6 shadow-md h-[400px]  flex flex-col md:flex-row items-center md:items-start">
           {/* Text Section */}
-          <div className="flex flex-col justify-center text-left md:w-2/3 space-y-4">
-            <span className="text-[#00BCD4] font-medium text-2xl md:text-4xl lg:text-5xl">
-              Changing the ways you receive healthcare.
+          <div className="flex flex-col justify-center text-left md:w-2/3 space-y-4 px">
+            <span className="text-[#00BCD4] font-large text-3xl md:text-2xl lg:text-4xl">
+              Changing the  ways you receive healthcare.
             </span>
             <span className="text-[#5B5B5B] text-lg md:text-xl lg:text-2xl">
               Visit any healthcare center today, to know yours and stay healthy.
             </span>
+            <Link href="/login" className="w-32 px-4 py-2 bg-[#009688] text-white hover:bg-[#00796b] text-center rounded-md">
+              Get Started
+            </Link>
           </div>
 
           {/* Image Section */}
-          <div className="w-full md:w-1/3 flex justify-center md:justify-end mt-8 md:mt-0">
-            <img src="/landing.png" alt="Healthcare Illustration" className="w-full h-auto rounded-md" />
-          </div>
+          {/* <div className="h-[300px] "> */}
+            <img src="/landing.png" alt="Healthcare Illustration" height={545} width={300} className="max-[827px]:hidden  absolute bottom-0 right-0 " />
+          {/* </div> */}
         </div>
-
       </main>
+
+
 
 
 
@@ -160,7 +164,7 @@ export default function Home() {
       <section className="px-4 py-6 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 max-w-7xl">
           {services.map(service => (
-            <div key={service.id} className="bg-white shadow-md rounded-md overflow-hidden">
+            <div key={service.id} className="bg-white shadow-md  overflow-hidden">
               <img src={service.image} alt={service.title} className="w-full h-32 object-cover" />
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
@@ -168,7 +172,7 @@ export default function Home() {
                   <div className="flex space-x-1">{renderStars(service.rating)}</div>
                 </div>
                 <div className="mt-2 text-right">
-                  <span className="text-sm text-white bg-[#00BCD4] px-2 py-1 rounded-md">{service.price}</span>
+                  <span className="text-sm text-white bg-[#00BCD4] px-2 py-1 ">{service.price}</span>
                 </div>
               </div>
             </div>
@@ -176,8 +180,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-6 flex justify-center">
-        <div className="flex flex-wrap justify-center items-center gap-20 max-w-full md:max-w-[85%] bg-white p-4 shadow-md rounded-md w-full">
+      <section className="px-9 py-5 flex justify-center">
+        <div className="flex overflow-auto justify-center items-center gap-20 max-w-full md:max-w-[85%] bg-white p-4 shadow-md  w-full">
           <img src="/image1.png" alt="Logo 1" className="h-16 w-auto object-contain" />
           <img src="/image2.png" alt="Logo 2" className="h-16 w-auto object-contain" />
           <img src="/image3.png" alt="Logo 3" className="h-16 w-auto object-contain" />
